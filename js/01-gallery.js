@@ -3,9 +3,9 @@ import { galleryItems } from "./gallery-items.js";
 
 const galleryRef = document.querySelector(".gallery");
 
-galleryItems.forEach(({ preview, original, description }, idx, arr) => {
+galleryItems.forEach(({ preview, original, description }) => {
   const markupString = `<div class="gallery__item">
-  <a class="gallery__link" src=${original}>
+  <a class="gallery__link" href=${original}>
     <img
       class="gallery__image"
       src="${preview}"
@@ -19,7 +19,7 @@ galleryItems.forEach(({ preview, original, description }, idx, arr) => {
 });
 
 galleryRef.addEventListener("click", (e) => {
-  e.preventDefault;
+  e.preventDefault();
 
   if (e.target === e.currentTarget) {
     return;
